@@ -97,7 +97,31 @@ pick the class i that max $h_\theta(x)$
 
 Mutual information (from wiki): https://en.wikipedia.org/wiki/Mutual_information
 
-Entropy
+**Entropy:**
+$$
+Ent(D) = -\sum_{k=1}^{|y|}p_k\log_2p_k
+$$
+​	最好的情况: $p_k$ =1 (此时Ent(D)为0)
+
+**Information Gain**
+
+
+
+**Gain ratio**:
+
+信息增益具有自己的弱点 <例如"编号"作为划分>---偏好取值较多的属性！
+
+def Gain ratio:
+$$
+Gain_ratio(D,a) = \frac{Gain(D,a)}{IV(a)} \\
+$$
+
+
+#### ID3 and C4.5
+
+
+
+
 
 
 
