@@ -23,6 +23,7 @@ test  = FeatureEng1.FeatureSelect(test)
 #完成特征提取,采用线性模型fit并得到误差
 train = train.set_index(['Id'])
 test = test.set_index(['Id'])
+#预测列
 Y_Column = ['winPlacePerc']
 
 cols_to_fit = [col for col in train.columns if col not in Y_Column]
