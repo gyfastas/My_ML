@@ -18,7 +18,7 @@ def FeatureSelect(df):
     df['damageDealtNorm'] = df['damageDealt'] * ((100 - df['playersJoined']) / 100 + 1)
     df['distance'] = df['walkDistance']+df['swimDistance']+df['rideDistance']
     #drop掉不用的特征
-    cols_to_drop = ['groupId','numGroups','matchId', 'roadKills', 'teamKills', 'vehicleDestroys','weaponsAcquired', 'maxPlace', 'walkDistance','winPoints', 'swimDistance', 'rideDistance','kills','damageDealt','DBNOs','killPoints','longestKill','revives','killStreaks']
+    cols_to_drop = ['Id','groupId','numGroups','matchId','maxPlace','winPoints','damageDealt','killPoints']
     cols_to_fit = [col for col in df.columns if col not in cols_to_drop]
     df = df[cols_to_fit]
 

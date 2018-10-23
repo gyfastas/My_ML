@@ -169,3 +169,37 @@ https://www.kaggle.com/deffro/eda-is-fun
 
 LinearRegression:
 
+简单的线性拟合，出来的效果不理想
+
+
+
+
+
+### 10.20 Sklearn的使用
+
+#### SVR Model
+
+参数调整以及意义：
+
+kernel: 用的内核，RBF..Linear...Polynomial...
+
+cache size: 如果RAM够用可以设置大一点，训练得会变快?
+
+RBF Kernel中参数的影响:
+
+gamma 和 C http://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
+
+
+
+
+
+### 10.22
+
+#### XgBoost原理与使用
+
+https://xgboost.readthedocs.io/en/latest/ 官方文档
+
+https://www.cnblogs.com/wxquare/p/5541414.html理解
+
+
+
