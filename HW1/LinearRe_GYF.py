@@ -3,6 +3,7 @@
 #Author: 郭远帆
 #rev.0 2018.10.28
 import sklearn
+from sklearn.preprocessing import MaxAbsScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import Ridge
@@ -24,7 +25,6 @@ test = pd.read_csv('./datas/test.csv')
 
 train = FeatureEng1.FeatureSelect(train)
 #完成特征提取,采用线性模型fit并得到误差
-
 #预测列
 Y_Column = ['winPlacePerc']
 
@@ -33,19 +33,14 @@ X_Train = train[cols_to_fit]
 Y_Train = train[Y_Column]
 
 X_Train,X_Test,Y_Train,Y_Test = train_test_split(X_Train,Y_Train,test_size= 0.25,random_state=0)
-
 #训练线性模型
 model = LinearRegression()
 model.fit(X_Train,Y_Train)
-model2 = BayesianRidge()
-model2.fit(X_Train,Y_Train)
 
 #预测
 y_Pred = model.predict(X_Test)
-y_Pred2 = model2.predict(X_Test)
 M = mean_absolute_error(Y_Test,y_Pred)
-M2 = mean_absolute_error(Y_Test,y_Pred)
-print(M,M2)
+print(M)
 
 
 

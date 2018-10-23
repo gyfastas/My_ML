@@ -37,7 +37,7 @@ Y_Train = df[Y_Column]
 
 X_Train,X_Test,Y_Train,Y_Test = train_test_split(X_Train,Y_Train,test_size= 0.25,random_state=0)
 
-#训练线性模型
+#训练SVR模型
 model = LinearSVR()
 model.fit(X_Train,Y_Train)
 model2 = NuSVR()
