@@ -27,7 +27,6 @@ df['damageDealtNorm'] = df['damageDealt'] * ((100 - df['playersJoined']) / 100 +
 cols_to_drop = ['Id','groupId','numGroups','matchId']
 cols_to_fit = [col for col in df.columns if col not in cols_to_drop]
 df = df[cols_to_fit]
-sample_num = 2000
 df = df.sample(sample_num)
 Y_Column = ['winPlacePerc']
 

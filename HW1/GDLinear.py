@@ -8,8 +8,9 @@ Author: 郭远帆
 import numpy as np
 from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import MaxAbsScaler
 class GDLinear():
-    def __init__(self,alpha = 1,L = 0,max_iter = None,min_abs = 0.001,beta1 = 0.5,beta2 = 0.5 ):
+    def __init__(self,alpha = 0.0001,L = 0,max_iter = 10000,min_abs = 0.005,beta1 = 0.5,beta2 = 0.5 ):
         '''
         Initialize the model
         Paras:
@@ -35,6 +36,8 @@ class GDLinear():
         :param Y: Numpy Array of Target of shape(n_samples,1)
         :return: nothing
         '''
+        X = np.array(X)
+        Y = np.array(Y)
         n_samples = X.shape[0]
         n_features = X.shape[1]
         n_target = Y.shape[1]
@@ -46,46 +49,52 @@ class GDLinear():
         #Training(gradient descent)
         if self.max_iter==None:
             while(1):
-                h_x = np.matmul(X,self.w) + b
-                self.b = self.b - self.alpha/n_samples*(np.sum((h_x-Y))
+                h_x = np.matmul(X,self.w) + self.b
+                self.b = self.b - self.alpha/n_samples*(np.sum(h_x-Y))
+
                 for j in range(0,n_features):
                     self.w[j,0] = self.w[j,0] - self.alpha/n_samples*(np.sum((h_x-Y)*X[:,j]))
 
-                if L==0:
-                    M = mean_squared_error(h_x,Y)
-                elif L==1:
-                    M = 0.5/n_samples*mean_squared_error(h_x,y) + self.beta1*np.sum(np.abs(self.w))
+                if self.L==0:
+                    M = np.sum(np.abs(h_x-Y))
+                    M = M/n_samples
+                elif self.L==1:
+                    M = 0.5/n_samples*np.sum(np.abs(h_x-Y)) + self.beta1*np.sum(np.abs(self.w))
 
-                elif L==2:
-                    M = 0.5/n_samples*mean_squared_error(h_x,y) + self.beta2*np.sqrt(np.sum(self.w*self.w)))
+                elif self.L==2:
+                    M = 0.5/n_samples*np.sum(np.abs(h_x-Y)) + self.beta2*np.sqrt(np.sum(self.w*self.w))
                 else:
-                    M = mean_squared_error(h_x,Y)
+                    M = np.sum(np.abs(h_x-Y))
                 if M <= self.min_abs:
                     break
 
         else:
+            #gradient descent
             for k in range(0,self.max_iter):
-                h_x = np.matmul(X,self.w) + b
-                self.b = self.b - self.alpha/n_samples*(np.sum((h_x-Y))
+                h_x = np.matmul(X,self.w) + self.b
+                self.b = self.b - self.alpha/n_samples*(np.sum((h_x-Y)))
                 for j in range(0,n_features):
-                    self.w[j,0] = self.w[j,0] - self.alpha/n_samples*(np.sum((h_x-Y)*X[:,j]))
+                    xj = X[:,j]
+                    self.w[j,0] = self.w[j,0] - self.alpha/n_samples*(np.sum((h_x-Y)*xj))
 
-                if L==0:
-                    M = mean_squared_error(h_x,Y)
-                elif L==1:
-                    M = 0.5/n_samples*mean_squared_error(h_x,y) + self.beta1*np.sum(np.abs(self.w))
+                #cost function
+                if self.L==0:
+                    M = np.sum(np.abs(h_x-Y))
+                    M = M/n_samples
+                elif self.L==1:
+                    M = 0.5/n_samples*np.sum(np.abs(h_x-Y)) + self.beta1*np.sum(np.abs(self.w))
 
-                elif L==2:
-                    M = 0.5/n_samples*mean_squared_error(h_x,y) + self.beta2*np.sqrt(np.sum(self.w*self.w)))
+                elif self.L==2:
+                    M = 0.5/n_samples*np.sum(np.abs(h_x-Y)) + self.beta2*np.sqrt(np.sum(self.w*self.w))
                 else:
-                    M = mean_squared_error(h_x,Y)
+                    M = np.sum(np.abs(h_x-Y))
+                print(M)
                 if M <= self.min_abs:
                     break
 
 
     def predict(self,X):
         '''
-
         :param self:
         :param X: Numpy Array of shape(n_samples,n_features)
         :return: Prediction Y
@@ -94,24 +103,31 @@ class GDLinear():
 
         return Y
 
-    def set_para(self,alpha,L,max_iter,min_abs):
+    def set_para(self,alpha,L,max_iter,min_abs,beta1,beta2):
         '''
         :param self:
         :param alpha: Learning rate
         :param L: Regularization
-        :param min_abs: min absolute error for stop training
+        :param min_abs: min error for stop training
         :param max_iter: Max iteration, None is no limitation on iteration
+        :param beta1: L1 ratio
+        :param beta2: L2 ratio
         :return:
         '''
         self.alpha = alpha
         self.L = L
         self.max_iter = max_iter
         self.min_abs = min_abs
+        self.beta1 = beta1
+        self.beta2 = beta2
+
     def get_coefficient(self):
         '''
 
         :return: coefficient of the model
         '''
+
+        return self.b,self.w
 
 
 
