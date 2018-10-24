@@ -27,7 +27,7 @@ df['damageDealtNorm'] = df['damageDealt'] * ((100 - df['playersJoined']) / 100 +
 cols_to_drop = ['Id','groupId','numGroups','matchId']
 cols_to_fit = [col for col in df.columns if col not in cols_to_drop]
 df = df[cols_to_fit]
-sample_num = 20000
+sample_num = 2000
 df = df.sample(sample_num)
 Y_Column = ['winPlacePerc']
 
@@ -38,15 +38,12 @@ Y_Train = df[Y_Column]
 X_Train,X_Test,Y_Train,Y_Test = train_test_split(X_Train,Y_Train,test_size= 0.25,random_state=0)
 
 #训练SVR模型
-model = LinearSVR()
+model = SVR()
 model.fit(X_Train,Y_Train)
-model2 = NuSVR()
-model2.fit(X_Train,Y_Train)
 
 #预测
 y_Pred = model.predict(X_Test)
-y_Pred2 = model2.predict(X_Test)
+#计算平均绝对值误差
 M = mean_absolute_error(Y_Test,y_Pred)
-M2 = mean_absolute_error(Y_Test,y_Pred2)
-print(M,M2)
+print(M)
 

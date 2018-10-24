@@ -23,3 +23,4 @@ df = df[df['playersJoined'] > 49]
 df['killsNorm'] = df['kills'] * ((100 - df['playersJoined']) / 100 + 1)
 df['damageDealtNorm'] = df['damageDealt'] * ((100 - df['playersJoined']) / 100 + 1)
 
+

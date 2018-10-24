@@ -7,7 +7,6 @@ from sklearn.preprocessing import MaxAbsScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import Ridge
-from sklearn.linear_model import BayesianRidge
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import train_test_split
 from sklearn import svm
@@ -34,11 +33,12 @@ Y_Train = train[Y_Column]
 
 X_Train,X_Test,Y_Train,Y_Test = train_test_split(X_Train,Y_Train,test_size= 0.25,random_state=0)
 #训练线性模型
-model = LinearRegression()
+model = LinearRegression(normalize=True)
 model.fit(X_Train,Y_Train)
 
 #预测
 y_Pred = model.predict(X_Test)
+#计算平均误差
 M = mean_absolute_error(Y_Test,y_Pred)
 print(M)
 
