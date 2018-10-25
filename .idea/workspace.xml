@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78ee6a1f-f60b-46e3-a7d8-521745377b80" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/HW1/GDLinearRe_GYF.ipynb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/HW1/GDLinearRe_GYF.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/HW1/FeatureEng1.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/HW1/LinearRe_GYF.py" afterPath="$PROJECT_DIR$/HW1/LinearRe_GYF.py" />
-      <change beforePath="$PROJECT_DIR$/HW1/Model/GDLinear.py" afterPath="$PROJECT_DIR$/HW1/GDLinear.py" />
-      <change beforePath="$PROJECT_DIR$/HW1/SVR_GYF.py" afterPath="$PROJECT_DIR$/HW1/SVR_GYF.py" />
+      <change beforePath="$PROJECT_DIR$/HW1/FeatureEng_LYR.py" afterPath="$PROJECT_DIR$/HW1/FeatureEng_LYR.py" />
+      <change beforePath="$PROJECT_DIR$/HW1/FeatureEng_TRJ.py" afterPath="$PROJECT_DIR$/HW1/FeatureEng_TRJ.py" />
       <change beforePath="$PROJECT_DIR$/HW1/report/机器学习作业1-郭远帆，罗乙然，唐荣俊.docx" afterPath="$PROJECT_DIR$/HW1/report/机器学习作业1-郭远帆，罗乙然，唐荣俊.docx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +20,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="GDLinearRe_GYF.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GDLinearRe_GYF.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW1/GDLinearRe_GYF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="21">
+              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FeatureEng_GYF.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HW1/FeatureEng_GYF.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,7 +63,7 @@
       <file leaf-file-name="RandomForest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HW1/RandomForest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="420">
               <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
@@ -159,7 +164,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -168,21 +172,11 @@
               <item name="My_ML" type="b2602c69:ProjectViewProjectNode" />
               <item name="My_ML" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="My_ML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_ML" type="462c0819:PsiDirectoryNode" />
-              <item name="HW1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="My_ML" type="b2602c69:ProjectViewProjectNode" />
-              <item name="My_ML" type="462c0819:PsiDirectoryNode" />
-              <item name="HW1" type="462c0819:PsiDirectoryNode" />
-              <item name="datas" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,9 +301,8 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.49356222" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.652897" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28755364" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2918455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="R Packages" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="R Graphics" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -322,6 +315,7 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1722103" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="0" width="434" height="848" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -358,9 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9870">
           <caret line="492" column="26" lean-forward="false" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
-          <folding>
-            <element signature="e#506#537#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -381,14 +372,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/GDLinearRe_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -401,9 +385,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10332">
           <caret line="492" column="26" lean-forward="false" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
-          <folding>
-            <element signature="e#506#537#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -424,14 +405,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/LinearRe_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -443,9 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9870">
           <caret line="492" column="26" lean-forward="false" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
-          <folding>
-            <element signature="e#506#537#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -466,14 +437,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/LinearRe_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -485,9 +449,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9870">
           <caret line="492" column="26" lean-forward="true" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
-          <folding>
-            <element signature="e#506#537#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -506,14 +467,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HW1/Model/GBLinear.py" />
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/LinearRe_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -535,14 +489,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/SVR_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -557,14 +504,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="17" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/SVR_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -579,14 +519,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="20" column="23" lean-forward="false" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/LinearRe_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -594,14 +527,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/Main.py" />
     <entry file="file://$PROJECT_DIR$/HW1/MainNote.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
@@ -634,14 +560,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="18" column="77" lean-forward="false" selection-start-line="18" selection-start-column="77" selection-end-line="18" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/HW1/FeatureEng1.py" />
     <entry file="file://$PROJECT_DIR$/HW1/FeatureEng_LYR.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -664,9 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
           <caret line="492" column="26" lean-forward="false" selection-start-line="492" selection-start-column="26" selection-end-line="492" selection-end-column="26" />
-          <folding>
-            <element signature="e#506#537#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -687,7 +603,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HW1/RandomForest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="420">
           <caret line="24" column="10" lean-forward="true" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
@@ -713,8 +629,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/HW1/GDLinearRe_GYF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="21">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
