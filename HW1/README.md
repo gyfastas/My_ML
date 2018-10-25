@@ -17,9 +17,17 @@
 
 -GDLinearRe_GYF.py 包含了使用梯度下降法的线性回归模型在数据集上测试的代码（可以运行查看结果)
 
--FeatureEng1.py 包含了为线性模型设计的特征提取函数
+-FeatureEng_GYF.py 包含了为线性模型设计的特征提取函数
 
 -LinearRe_GYF.py 包含了使用sklearn中的线性回归模型在数据集上测试的代码
+
+-FeatureEng_TRJ.py 包含了为决策树模型设计的特征提取函数
+
+-main_in_decision_tree.py 使用sklearn决策树在数据集上运行的代码
+
+-FeatureEng_LYR.py 包含了为随机森林模型设计的特征提取函数
+
+-RandomForest.py 使用sklearn的随机森林模型在数据集上运行的代码
 
 
 
