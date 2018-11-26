@@ -6,6 +6,7 @@ Author: 郭远帆
 '''
 import sklearn
 from sklearn.preprocessing import MaxAbsScaler
+from sklearn.preprocessing import Normalizer
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Lasso
 from sklearn.linear_model import Ridge
@@ -17,17 +18,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-
+from sklearn.linear_model import SGDRegressor
 import FeatureEng_GYF
 #读取数据
 train = pd.read_csv('./datas/train.csv')
 test = pd.read_csv('./datas/test.csv')
 
 
-train = FeatureEng1.FeatureSelect(train)
+train = FeatureEng_GYF.FeatureSelect(train)
 
-sample_num = 5000
-train = train.sample(sample_num)
 #完成特征提取,采用线性模型fit并得到误差
 #预测列
 Y_Column = ['winPlacePerc']
@@ -38,7 +37,12 @@ Y_Train = train[Y_Column]
 
 X_Train,X_Test,Y_Train,Y_Test = train_test_split(X_Train,Y_Train,test_size= 0.25,random_state=0)
 #训练线性模型
-model = LinearRegression()
+transformer = Normalizer()
+X_Train = transformer.fit_transform(X_Train)
+Y_Train = transformer.fit_transform(Y_Train)
+X_Test  = transformer.fit_transform(X_Test)
+Y_Test  = transformer.fit_transform(Y_Test)
+model = SGDRegressor(alpha=0.00001)
 model.fit(X_Train,Y_Train)
 
 #预测
