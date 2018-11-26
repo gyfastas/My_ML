@@ -141,7 +141,13 @@ $$
 
 # Project and Resources
 
+## Supervised Learning
 
+### Linear Model
+
+https://blog.csdn.net/qq_16000815/article/details/80928728 sklearn中的线性模型参数解释
+
+https://blog.csdn.net/he19930303/article/details/51147858 奇异值分解SVD
 
 
 
