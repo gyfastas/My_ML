@@ -12,7 +12,7 @@ class TransformerNet(nn.Module):
         super(TransformerNet, self).__init__()
 
         # Downsampling Convolution 下采样卷积层
-        self.initial_layers = nn.Sequential(
+        self.downsampling_layers = nn.Sequential(
             ConvLayer(3, 32, kernel_size=9, stride=1),
             nn.InstanceNorm2d(32, affine=True),
             nn.ReLU(True),
@@ -23,6 +23,7 @@ class TransformerNet(nn.Module):
             nn.InstanceNorm2d(128, affine=True),
             nn.ReLU(True),
         )
+
 
         # Residual layers(残差层)
         self.res_layers = nn.Sequential(
@@ -45,7 +46,7 @@ class TransformerNet(nn.Module):
         )
 
     def forward(self, x):
-        x = self.initial_layers(x)
+        x = self.downsampling_layers(x)
         x = self.res_layers(x)
         x = self.upsample_layers(x)
         return x
@@ -57,7 +58,7 @@ class ConvLayer(nn.Module):
     默认的卷积的padding操作是补0，这里使用边界反射填充
     """
 
-    def __init__(self, in_channels, out_channels, kernel_size, stride):
+    def __init__(self, in_channels, out_channels, kernel_size, stride=1):
         super(ConvLayer, self).__init__()
         reflection_padding = int(np.floor(kernel_size / 2))
         self.reflection_pad = nn.ReflectionPad2d(reflection_padding)
