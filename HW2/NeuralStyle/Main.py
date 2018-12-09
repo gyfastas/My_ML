@@ -5,9 +5,12 @@ import PIL
 import torch.nn.functional as F
 from torchvision.transforms import transforms
 import models
+from torch.utils import data
 from models.Metanet import *
 from Config import Config
-
+from utils.utils import *
+from models.PackedVGG import Vgg16
+import tqdm
 #load configs
 configs = Config()
 
@@ -39,6 +42,23 @@ def train(**kwargs):
 
     device = torch.device('cuda') if opt.use_gpu else torch.device('cpu')
 
+    dataloader_content = data.DataLoader(content_dataset,opt.batch_size,shuffle=True)
+
+    #Transform network
+    transformer = TransformNet()
+    transformer.to(device)
+
+    #Meta Network
+    meta = MetaNet()
+    meta.to(device)
+
+    #Loss network VGG16
+    vgg = Vgg16().eval()
+    vgg.to(device)
+
+
+    #optimizer
+    optimizer = torch.optim.Adam(transformer.parameters(), opt.lr)
 
     for batch, (content_images, _) in pbar:
         # 每 20 个 batch 随机挑选一张新的风格图像，计算其特征
