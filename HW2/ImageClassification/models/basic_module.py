@@ -10,7 +10,7 @@ class BasicModule(t.nn.Module):
 
     def __init__(self):
         super(BasicModule,self).__init__()
-        self.model_name='MobileNet'
+        self.model_name= 'MobilenetV2'
 
     def load(self, path):
         """

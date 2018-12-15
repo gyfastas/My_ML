@@ -30,7 +30,7 @@ class bottleNeck(nn.Module):
         out = self.left(x)
         residual = x if self.downsample is None else self.downsample(x)
         out += residual
-        out = F.relu6(out)
+        out = F.relu(out)
         return out
 
 

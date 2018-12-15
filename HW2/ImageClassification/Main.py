@@ -19,7 +19,6 @@ def test(**kwargs):
     if opt.load_model_path:
         model.load(opt.load_model_path)
     model.to(opt.device)
-
     # data
     train_data = DogCat(opt.test_data_root,test=True)
     test_dataloader = DataLoader(train_data,batch_size=opt.batch_size,shuffle=False,num_workers=opt.num_workers)
@@ -27,6 +26,7 @@ def test(**kwargs):
     for ii,(data,path) in tqdm(enumerate(test_dataloader)):
         input = data.to(opt.device)
         score = model(input)
+        score = 1 - score #Mobilenet invert the score....so...
         probability = t.nn.functional.softmax(score,dim=1)[:,0].detach().tolist()
         # label = score.max(dim = 1)[1].detach().tolist()
         
@@ -94,13 +94,13 @@ def train(**kwargs):
             
             # meters update and visualize
             loss_meter.add(loss.item())
-            # detach 一下更安全保险
+
             confusion_matrix.add(score.detach(), target.detach()) 
 
             if (ii + 1)%opt.print_freq == 0:
                 vis.plot('loss', loss_meter.value()[0])
                 
-                # 进入debug模式
+
                 if os.path.exists(opt.debug_file):
                     import ipdb;
                     ipdb.set_trace()
@@ -118,7 +118,7 @@ def train(**kwargs):
         # update learning rate
         if loss_meter.value()[0] > previous_loss:          
             lr = lr * opt.lr_decay
-            # 第二种降低学习率的方法:不会有moment等信息的丢失
+
             for param_group in optimizer.param_groups:
                 param_group['lr'] = lr
         
