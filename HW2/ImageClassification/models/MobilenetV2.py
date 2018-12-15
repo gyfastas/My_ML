@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 from torch.nn import functional as F
+from .basic_module import BasicModule
 
 '''
 Sub Structure: Bottleneck
@@ -11,16 +12,16 @@ class bottleNeck(nn.Module):
         self.stride = stride
 
         self.left = nn.Sequential(
-            nn.Conv2d(inchannel, inchannel*expansion, kernel_size=1, bias=False)
-            nn.BatchNorm2d(inchannel*expansion)
-            nn.ReLU6(inplace=True)
+            nn.Conv2d(inchannel, inchannel*expansion, kernel_size=1, bias=False),
+            nn.BatchNorm2d(inchannel*expansion),
+            nn.ReLU6(inplace=True),
 
             nn.Conv2d(inchannel*expansion, inchannel*expansion, kernel_size=3, stride=stride,
-                      padding= 1, bias=False, groups=inchannel*expansion)
-            nn.BatchNorm2d(inchannel*expansion)
-            nn.ReLU6(inplace=True)
-            nn.Conv2d(inchannel*expansion, outchannel, kernel_size=1, bias=False)
-            nn.BatchNorm2d(outchannel)
+                      padding= 1, bias=False, groups=inchannel*expansion),
+            nn.BatchNorm2d(inchannel*expansion),
+            nn.ReLU6(inplace=True),
+            nn.Conv2d(inchannel*expansion, outchannel, kernel_size=1, bias=False),
+            nn.BatchNorm2d(outchannel),
         )
 
         self.downsample = downsample
@@ -34,17 +35,17 @@ class bottleNeck(nn.Module):
 
 
 
-class MobileNetv2(nn.Module):
+class MobilenetV2(BasicModule):
     '''
     This is the main Module MobileNetV2
     '''
 
     def __init__(self,num_classes = 2):
-        super(MobileNetv2,self).__init__()
+        super(MobilenetV2,self).__init__()
         self.inchannel = 32
         self.pre = nn.Sequential(
-            nn.Conv2d(3,32,kernel_size=3,stride=2,padding=1,bias=False)
-            nn.BatchNorm2d(32)
+            nn.Conv2d(3,32,kernel_size=3,stride=2,padding=1,bias=False),
+            nn.BatchNorm2d(32),
             nn.ReLU(inplace=True))
 
         ##bottleNeck Repeat Structure
@@ -56,8 +57,8 @@ class MobileNetv2(nn.Module):
         self.layer6 = self._make_layer(96,160,3,2,6)
         self.layer7 = self._make_layer(160,320,1,1,6)
         self.post = nn.Sequential(
-            nn.Conv2d(320,1280,kernel_size=1,stride=1,bias=False)
-            nn.AvgPool2d(7,stride=1)
+            nn.Conv2d(320,1280,kernel_size=1,stride=1,bias=False),
+            nn.AvgPool2d(7,stride=1),
             nn.Conv2d(1280,num_classes,kernel_size=1,stride=1,bias = False))
 
 
@@ -66,15 +67,15 @@ class MobileNetv2(nn.Module):
         Make Layer (which contains several bottleneck structure)
         '''
         downsample = nn.Sequential(
-            nn.Conv2d(inchannel,outchannel,kernel_size=1,stride=stride,bias=False)
-            nn.BatchNorm2d(outchannel)
+            nn.Conv2d(inchannel,outchannel,kernel_size=1,stride=stride,bias=False),
+            nn.BatchNorm2d(outchannel),
         )
 
         layers = []
         layers.append(bottleNeck(inchannel,outchannel,stride,downsample=downsample,expansion=expansion))
 
         for i in range(1,n):
-            layers.append(outchannel,outchannel,expansion=expansion)
+            layers.append(bottleNeck(outchannel,outchannel,expansion=expansion))
 
         return nn.Sequential(*layers)
 

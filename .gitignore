@@ -5,3 +5,6 @@
 *.pptx
 *.pptx
 *.jpg
+*.pth
+HW2/ImageClassification/checkpoints/MobileNet_1214_20_56_12
+HW2/ImageClassification/checkpoints/MobileNet_1214_13_25_04
